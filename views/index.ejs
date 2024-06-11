@@ -1,0 +1,400 @@
+<!DOCTYPE html>  
+<html lang="en">
+
+  <head>
+
+    <title>Trade trends</title> 
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="./img/smalllogo.png">
+    <meta charset="=UTF-8" />
+    <!--meta-->
+    
+  </head>
+
+  <body id="indexbody" >
+
+    <header id="mainheader">
+      <img src="./img/logo22.png" alt="logo" id="mainlogo"/>
+     
+      <form class="nosubmit" id="sform">
+        <input id="searchbar" class="nosubmit" type="search" placeholder="Search...">
+      </form>
+
+      <div id="sp">
+        <div id="settings">
+          <div class="spl"></div>
+          <div class="spl"></div>
+          <div class="spl"></div>
+        </div>
+        <div id="settingspanel">
+          <h2 class="h2c">Settings</h2>
+          <div id="l1"></div>
+          <span id="user" class="user-item2"></span>
+          <div id="th">
+            <span>Theme </span>
+            <div class="container">
+              <div class="tabs">
+                <input type="radio" id="radio-1" name="tabs" checked="">
+                <label class="tab" for="radio-1">Light</label>
+                <input type="radio" id="radio-2" name="tabs">
+                <label class="tab" for="radio-2">Dark</label>
+                <span class="glider"></span>
+              </div>
+            </div>
+          </div>
+          <button id="SignoutBtn" class="sobtn">Sign out</button>
+        </div>
+      </div>
+    </header>
+
+    <nav id="sidenav">
+      <span id="homebtn" class="navA" onclick="changeTab('mainpanel', this)"><img src="./img/homeIcon.png" id="home" class="navlogo" alt="navlogo"><h4 class="navtxt">Home</h4></span>
+      <span id="tbtn" class="navA" onclick="changeTab('rtools', this)"><img src="./img/toolsIcon.png" id='tools' class="navlogo" alt="navlogo"><h4 class="navtxt">Research Tools</h4></span>
+      <span id="fbtn" class="navA" onclick="changeTab('feed', this)"><img src="./img/socialsIcon.png" id='sf' class="navlogo" alt="navlogo"><h4 class="navtxt">Social Feed</h4></span>
+      <span class="line"></span>
+      <h4 id="wlt">Watchlists</h4>
+      <select id="wlselect">
+        
+      </select>
+      <div id="wlcontainer">
+      </div>
+      <button id="deleteWL">Delete watchlist</button>
+    </nav>
+
+    
+    <div id="mainpanel">
+      <div id="toprow">
+        <h1 id="mrkts">Markets</h1>
+        <span id="dot"></span>
+        <h2 id="status">closed</h2>
+      </div>
+      <div id="livemarkets">
+        <div id="DJIA" class="liveticker" onclick="createChart('DIA')">
+          <img src="./img/dj.png" alt=" " class="timg">
+          <h2 class="ltickern">Dow Jones</h2>
+          <h2 id='DIA' class="ltickerp"></h2>
+        </div>
+        <div id='s&p500' class="liveticker" onclick="createChart('SPY')">
+          <img src="./img/sp.png" alt="icon" class="timg">
+          <h2 class="ltickern"> S&P 500</h2>
+          <h2 id="SPY" class="ltickerp"></h2>
+        </div>
+        <div id='NASDAQ' class="liveticker" onclick="createChart('NDAQ')">
+          <img src="./img/nd.png" alt="icon" class="timg">
+          <h2 class="ltickern">NASDAQ</h2>
+          <h2 id="NDAQ"   class="ltickerp"></h2>
+        </div>
+        <div id='VIX' class="liveticker" onclick="createChart('VIXY')">
+          <img src="./img/vix.png" alt="icon" class="timg">
+          <h2 class="ltickern">VIX</h2>
+          <h2 id='VIXY' class="ltickerp"></h2>
+        </div>
+      </div>
+      <div id="news">
+        <h1 class="nrecentt">Recent News</h1>
+        <div id="newspanel"></div>
+      </div>
+      <div id="chart">
+        <div id="loadingSpinner" class="spinner" style="display: none;"></div>
+        <div id="chartbtns">
+          <button id="chartbtn">Chart</button>
+          <button id="finbtn">Financials</button>
+          <span id="addtolist"><img src="./img/plusicon.png" alt="plusicon" id="plicon"></span>
+        </div>
+        <div id="chartcont"></div>
+        <div id="financialcont">
+          <h1 id="nda">No data available</h1>
+          <div id="finner">
+            <div id="bl">
+              <h3 class="ndai">calendar Year</h3>
+              <h3 class="ndai2">total Assets</h3>
+              <span class="line"></span>
+              <h3 class="ndai"> cashAndCashEquivalents</h3>
+              <h3 class="ndai"> shortTermInvestments</h3>
+              <h3 class="ndai">cashAndShortTermInvestments</h3>
+              <h3 class="ndai">netReceivables</h3>
+              <h3 class="ndai">inventory</h3>
+              <h3 class="ndai">otherCurrentAssets</h3>
+              <h3 class="ndai2">total Liabilities</h3>
+              <span class="line"></span>
+              <h3 class="ndai">accountPayables</h3>
+              <h3 class="ndai">shortTermDebt</h3>
+              <h3 class="ndai">taxPayables</h3>
+              <h3 class="ndai">deferredRevenue</h3>
+              <h3 class="ndai">otherCurrentLiabilities</h3>
+              <h3 class="ndai">totalCurrentLiabilities</h3>
+              <h3 class="ndai">longTermDebt</h3>
+              <h3 class="ndai">deferredRevenueNonCurrent</h3>
+              <h3 class="ndai">deferredTaxLiabilitiesNonCurrent</h3>
+              <h3 class="ndai">otherNonCurrentLiabilities</h3>
+              <h3 class="ndai">totalNonCurrentLiabilities</h3>
+              <h3 class="ndai">otherLiabilities</h3>
+              <h3 class="ndai">capitalLeaseObligations</h3>
+            </div>
+            <div class="numbers"></div>
+            <div class="numbers"></div>
+            <div class="numbers"></div>
+            <div class="numbers"></div>
+          </div>
+        </div>
+      </div>   
+    </div>
+
+    <div id="wlists"></div>
+
+    <div id="rtools">
+
+      <div id="thead">
+        <h1 id="theader">Earnings Calendar</h1>
+      </div>
+      <div id="toolnav">
+        <span id="ec" class="navB" onclick="changeTool('ect', this)"><h4 class="navtxt">Earnings Calendar</h4></span>
+        <span id="dcf" class="navB" onclick="changeTool('dcft', this)"><h4 class="navtxt">DCF Value</h4></span>
+        <span id="ci" class="navB" onclick="changeTool('cit', this)"><h4 class="navtxt">Compound Intrest</h4></span>
+        <span id="gi" class="navB" onclick="changeTool('git', this)"><h4 class="navtxt">Dividend Calendar</h4></span>
+      </div>
+
+      <div id="dcft">
+        <form id="dcfForm">
+            <label for="cashFlows" class="toollabel">Cash Flows:</label><br>
+            <input type="text" id="cashFlows" class="toolinput" name="cashFlows" placeholder="e.g., 100,150,200,250,300" required><br>
+
+            <label for="discountRate" class="toollabel">Discount Rate:</label><br>
+            <input type="number" id="discountRate" class="toolinput" name="discountRate" step="0.01" placeholder="e.g., 0.1 for 10%" required><br>
+
+            <label for="terminalValue" class="toollabel">Terminal Value:</label><br>
+            <input type="number" id="terminalValue" class="toolinput" name="terminalValue" placeholder="e.g., 2000" required><br>
+
+            <button type="button" id="calcdcf" onclick="calculateDCF()">Calculate DCF</button>
+            <h1 id="dcfresult"></h1>
+        </form>
+      </div>
+
+      <div id="cit">
+        <form id="compoundInterestForm">
+          <label for="principal" class="toollabel">Initial Principal Amount:</label><br>
+          <input type="number" id="principal" class="toolinput" name="principal" step="any" placeholder="Enter principal amount" required><br>
+  
+          <label for="rate" class="toollabel">Interest Rate (%):</label><br>
+          <input type="number" id="rate" class="toolinput" name="rate" step="any" placeholder="Enter interest rate" required><br>
+  
+          <label for="time" class="toollabel">Time Period (years):</label><br>
+          <input type="number" id="time" class="toolinput" name="time" step="any" placeholder="Enter time period in years" required><br>
+  
+          <label for="contribution" class="toollabel">Regular Contribution Amount:</label><br>
+          <input type="number" id="contribution" class="toolinput" name="contribution" step="any" placeholder="Enter regular contribution amount" required><br>
+  
+          <label for="contributionFrequency" class="toollabel">Contribution Frequency:</label><br>
+          <select id="contributionFrequency" name="contributionFrequency" required>
+              <option value="monthly">Monthly</option>
+              <option value="yearly">Yearly</option>
+          </select><br>
+  
+          <button type="button" id='calcic' onclick="compoundInterestWithContributions()">Calculate</button>
+          <div id="ciresult"></div>
+        </form>
+    
+        <div id="cichart"></div>
+      </div>
+
+      <div id="ect">
+        <div id="ectop">
+          <h2 class="an">Date Range</h2>
+          <input type="date" id="fromEC" class="RAdate">
+          <input type="date" id="toEC" class="RAdate">
+        </div>
+        <div id="ECcontainer">
+        </div>
+        <div id="loadingSpinnerEC" class="spinner"></div>
+      </div>
+
+      <div id="git">
+        <div id="gitop">
+          <h2 class="an">Date Range</h2>
+          <input type="date" id="fromGI" class="RAdate">
+          <input type="date" id="toGI" class="RAdate">
+        </div>
+        <div id="GIcontainer">
+        </div>
+        <div id="loadingSpinnerGI" class="spinner"></div>
+      </div>
+    </div>
+
+    <div id="feed">
+      <div id="notcont">
+        <img src="./img/not1.png" alt="not" id="notificon">
+        <h1 id="notcounter">0</h1>
+      </div>
+      <form class="nosubmit" id="feedsearch">
+        <input id="searchbarfeed" class="nosubmit" type="search" placeholder="Search...">
+      </form>
+
+      <h1 id="pyf"></h1>
+      <div id="users">
+      </div>
+
+
+      <div id="posts">
+        <div id="newpost">
+          <div class="nptext">
+            <img class="npavatar" src="./img/avatarb.png" alt="avatar">
+            <input type="text" id="npinput" placeholder="Share an idea (use $ before ticker)">
+          </div>
+          <div id="prevpic">
+            <img id="postimgpreview"></img>
+            <button id="removepic">X</button>
+          </div>
+          <div class="npbtns">
+            <button id="bullish">Bullish</button>
+            <button id="bearish">Bearish</button>
+            <img src="./img/picat.png" alt="img" id="addimg">
+            <input type="file" class="inp" onchange="getImageData(event, 'p')" />
+            <button id="post">Post</button>
+          </div>
+        </div>
+        <h1 id="nrecentt2">Recent Posts</h1>
+        <div id="recentposts">
+          <span id="npIndicator">Show 0 new posts</span>
+        </div>
+      </div>
+
+      <div id="commentSection"></div>
+
+      <div id="profileTab">
+        <div id="profileGoBack" class="gb">
+          <img class="gbicon" src="./img/gb.png" alt="go back">
+          <h1 class="gbheader">Go Back</h1>
+        </div>
+        <div id="profileP">
+          <div id="prtop">
+            <input type="file" class="inp2" onchange="getImageData(event, 'prp')" />
+            <img src="./img/avatarb.png" alt="prpic" id="ppic">
+            <div id="prsecond">
+              <div id="prnamet">
+                <h1 id="prName"></h1>
+                <img src="./img/ver.png" alt="prpic" id="prver">
+              </div>
+              <h1 class="prfollow"></h1>
+              <h1 class="prfollow"></h1>
+            </div>
+            <button id="follow">Follow</button>
+            <button id="unfollow">Unfollow</button>
+          </div>
+        </div>
+        <div id="prbuttons">
+          <h1 class="prbtn" onclick="changeProfileTab('0' , 'profilePosts')">Posts</h1>
+          <h1 class="prbtn" onclick="changeProfileTab('1' ,'profileReposts')">Reposts</h1>
+          <h1 class="prbtn" onclick="changeProfileTab('2' , 'profileLikedposts')">Liked posts</h1>
+          <h1 class="prbtn" onclick="changeProfileTab('3' ,'prfollowers')">Followers</h1>
+          <h1 class="prbtn" onclick="changeProfileTab('4' , 'prfollows')">Follows</h1>
+        </div>
+        <div id="profilePosts" ></div>
+        <div id="profileReposts" ></div>
+        <div id="profileLikedposts" ></div>
+        <div id="prfollowers" ></div>
+        <div id="prfollows" ></div>
+      </div>
+
+
+      <div id="righthand">
+        <span id="mainfeed" class="navB" onclick="changeFeedTab('posts', this)"><img src="./img/mfeed.png" id="mf" class="navlogo" alt="navlogo"><h4 class="navtxt">Main Feed</h4></span>
+        <span id="profile" class="navB" onclick="changeFeedTab('profileTab', this)"><img src="./img/profileicon.png" id='pr' class="navlogo" alt="navlogo"><h4 class="navtxt">Profile</h4></span>
+      </div>
+
+      <div id="notificationpanel">
+        <h1 class="nottxt">Notifications</h1>
+        <span class="line"></span>
+        <div id="notcontainer"></div>
+      </div>
+
+    </div>
+
+    <div id="postloading">
+      <h1>Posting</h1>
+      <div id="postloadingSpinner" class="spinner"></div>
+    </div>
+
+    <div id="nploading">
+      <h1>Uploading</h1>
+      <div id="npSpinner" class="spinner"></div>
+    </div>
+
+    <div id="searchcont">
+      <div id="searchbox"></div>
+    </div>
+
+    <div id="wlpanel">
+      <h1 class="wlp">Add to watchlist</h1>
+      <div id="wls"></div>
+      <button id="nwlbtn">Create new Watchlist</button>
+    </div>
+
+    <div id="nwlpanel">
+      <div id="nwls">
+        <div id="wrapper">
+          <h1 class="nwlt">Add to watchlist</h1>
+          <button id="exitNewWLCr">X</button>
+        </div>
+        <input id="watchlistname" type="text" required class="cinput2" placeholder="Watchlist name">
+        <button id="submitnwl">Create</button>
+      </div>
+    </div>
+
+    <div id="commentpanel">
+      <div id="newcomment">
+        <div id="replytop">
+          <h1 id="rt1">Replying to</h1>
+          <button id="discardcomment">X</button>
+        </div>
+        <div class="nptext">
+          <img class="npavatar" src="./img/avatarb.png" alt="avatar">
+          <input type="text" id="cominput" placeholder="Type your reply (use $ before ticker)">
+        </div>
+        <div id="Cprevpic">
+          <img id="Cpostimgpreview"></img>
+          <button id="Cremovepic">X</button>
+        </div>
+        <div class="npbtns">
+          <button id="Cbullish">Bullish</button>
+          <button id="Cbearish">Bearish</button>
+          <img src="./img/picat.png" alt="img" id="Caddimg">
+          <input type="file" class="inp" onchange="getImageData(event, 'c')"/>
+          <button id="reply">Reply</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="delWL">
+      <div id="deleteMI">
+        <h2 class="nwlt">Are you sure you want to delete this watchlist?</h2>
+        <div id="delBtns">
+          <button id="DeleteYes" class="del">Yes</button>
+          <button id="DeleteNo" class="del">No</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="snackbar"></div>
+
+ 
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-stock.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-data-adapter.min.js"></script>
+
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-exports.min.js"></script>
+
+    <link href="https://cdn.anychart.com/releases/8.11.0/css/anychart-ui.min.css" type="text/css" rel="stylesheet">
+    <link href="https://cdn.anychart.com/releases/8.11.0/fonts/css/anychart-font.min.css" type="text/css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+    <script src="main.js"></script>
+
+  </body>
+
+</html>
