@@ -1,6 +1,7 @@
 Trade Trends was developed by Symeon Soldatos & Dimitrios Polychronos.
 
 Project structure:
+
 •	Inside the "public" folder, there is a file with the CSS for the application, the main part of the application, which is the client-side code, and a subfolder containing all the photos and icons we used.
 
 •	The "models" folder contains the JavaScript files which define the database schemas we used for the application.
